@@ -5,7 +5,7 @@ import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label } from "reactst
 const CommentForm = ({ campsiteId }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
-    const handleSubmit = ({ values }) => {
+    const handleSubmit = (values) => {
         const comment = {
             campsiteId: parseInt(campsiteId),
             rating: values.rating,
@@ -15,10 +15,6 @@ const CommentForm = ({ campsiteId }) => {
         console.log(handleSubmit);
 
         setModalOpen(false);
-
-        return (
-            null
-        );
     }
 
     return (
@@ -39,7 +35,7 @@ const CommentForm = ({ campsiteId }) => {
                     <Formik
                         initialValues = {
                             {
-                                rating: {undefined}, 
+                                rating: undefined, 
                                 author: "", 
                                 commentText: ""
                             }
